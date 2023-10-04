@@ -1,0 +1,102 @@
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;margin-top: 3rem;
+}
+
+input{
+  margin-bottom: 2rem;
+  margin-left: 6.5rem;
+}
+
+.filter {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial;
+}
+
+.filter label {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.filter input[type="checkbox"] {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+
+.filter input[type="checkbox"]:checked {
+  background-color: #4caf50;
+}
+
+.filter input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s;
+}
+
+.filter input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+table{
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+th{
+  font-family: 'Poppins',OpenSans;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+td,th{
+  text-align: center;
+  padding: 0.5rem;
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial;
+}
+
+table thead tr {
+  height: 60px;
+  background-color: #333;
+
+}
+
+table tbody tr {
+  height: 50px;
+}
+
+tbody tr {
+  font-family: Poppins,OpenSans;
+  font-size: 15px;
+  color: gray;
+  line-height: 1.2;
+  font-weight: unset;
+}

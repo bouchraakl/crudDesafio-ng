@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="filter">
+    <input type="checkbox" name="filterByAge" id="filterByAge" />
+    <label for="switch">Age > 30</label>
+  </div>
+
+  <table class="table mt-2">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of peopleList">>
+          <td>{{ p.name }}</td>
+          <td>{{ p.age }}</td>
+          <td>{{ p.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
