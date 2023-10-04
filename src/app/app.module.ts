@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
-import { LoginComponent } from './system/login/login.component';
 import { ListComponent } from './people/list/list.component';
 import { RegisterComponent } from './people/register/register.component';
 
@@ -16,8 +15,7 @@ import { RegisterComponent } from './people/register/register.component';
     ListComponent,
     RegisterComponent,
     NavbarComponent,
-    FooterComponent,
-    LoginComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
