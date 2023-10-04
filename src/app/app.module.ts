@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ListComponent } from './people/list/list.component';
 import { RegisterComponent } from './people/register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegisterComponent } from './people/register/register.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
