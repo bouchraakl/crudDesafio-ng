@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="filter">
-    <input type="checkbox" name="filterByAge" id="filterByAge" />
+    <input type="checkbox" name="filterByAge" id="filterByAge" [(ngModel)]="showAgeAbove30" />
     <label for="switch">Age > 30</label>
   </div>
 
@@ -13,10 +13,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of peopleList">>
+      <tr *ngFor="let p of peopleList">
+        <ng-container *ngIf="!showAgeAbove30 || (showAgeAbove30 && +p.age > 30)">
           <td>{{ p.name }}</td>
           <td>{{ p.age }}</td>
           <td>{{ p.phone }}</td>
+        </ng-container>
       </tr>
     </tbody>
   </table>
