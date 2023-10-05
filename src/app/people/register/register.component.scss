@@ -1,7 +1,7 @@
 .register-form {
     max-width: 400px;
-    margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 40px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -16,18 +16,18 @@
     color: #333;
 }
 
-.form-group {
+.form-groupp {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.form-groupp label {
     display: block;
     font-weight: bold;
     margin-bottom: 10px;
     color: #555;
 }
 
-.form-group input {
+.form-groupp input {
     width: calc(100% - 20px);
     padding: 12px;
     font-size: 16px;

@@ -9,14 +9,13 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ListComponent } from './people/list/list.component';
 import { RegisterComponent } from './people/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     RegisterComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
