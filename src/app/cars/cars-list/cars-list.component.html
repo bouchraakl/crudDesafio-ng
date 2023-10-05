@@ -1,0 +1,18 @@
+<div class="container">
+    <app-main></app-main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of carsList">
+            <td>{{ c.name }}</td>
+            <td>{{ c.year }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

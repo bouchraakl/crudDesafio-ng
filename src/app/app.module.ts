@@ -9,6 +9,11 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ListComponent } from './people/list/list.component';
 import { RegisterComponent } from './people/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarsListComponent } from './cars/cars-list/cars-list.component';
+import { CarsRegisterComponent } from './cars/cars-register/cars-register.component';
+import { BooksListComponent } from './books/books-list/books-list.component';
+import { BooksRegisterComponent } from './books/books-register/books-register.component';
+import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +21,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent,
     NavbarComponent,
     FooterComponent,
+    CarsListComponent,
+    CarsRegisterComponent,
+    BooksListComponent,
+    BooksRegisterComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

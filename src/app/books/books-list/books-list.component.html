@@ -1,0 +1,18 @@
+<div class="container">
+    <app-main></app-main>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of booksList">
+            <td>{{ c.title }}</td>
+            <td>{{ c.author }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

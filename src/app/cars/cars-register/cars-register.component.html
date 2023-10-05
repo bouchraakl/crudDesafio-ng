@@ -1,0 +1,17 @@
+<div class="container">
+    <app-main></app-main>
+<div class="register-form">
+    <h2>Register Cars</h2>
+    <form (ngSubmit)="registerCars()">
+      <div class="form-groupp">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newCars.name" required>
+      </div>
+      <div class="form-groupp">
+        <label for="year">Year</label>
+        <input type="number" id="age" name="age" [(ngModel)]="newCars.year" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
