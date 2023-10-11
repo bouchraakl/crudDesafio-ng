@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { Book } from '../book';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-books-list',
@@ -8,13 +9,21 @@ import { Book } from '../book';
   styleUrls: ['./books-list.component.scss']
 })
 export class BooksListComponent {
-  booksList: Book[] = [];
+  data: any[] = [];
+  tableHeaders: string[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private bService:BookService) { }
 
-  ngOnInit() {
-    this.dataService.booksList$.subscribe(list => {
-      this.booksList = list;
+  ngOnInit(): void {
+    this.bService.listAll().subscribe((response: any[]) => {
+      this.data = response;
     });
   }
+
+  edit(){
+
+  }
+
+  delete(){}
+
 }

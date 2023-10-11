@@ -1,16 +1,21 @@
-<div class="container">
-    <app-main></app-main>
+<div class="container d-flex flex-column align-items-center mt-4 gap-4">
+  <app-main></app-main>
     <table>
       <thead>
         <tr>
           <th>Title</th>
           <th>Author</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let c of booksList">
+        <tr *ngFor="let c of data">
             <td>{{ c.title }}</td>
             <td>{{ c.author }}</td>
+            <td class="d-flex justify-content-center gap-2">
+              <button class="btn btn-primary" (click)="edit()">Edit</button>
+              <button class="btn btn-danger" (click)="delete()">Delete</button>
+            </td>
         </tr>
       </tbody>
     </table>

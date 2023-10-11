@@ -1,21 +1,23 @@
-<div class="container">
+<div class="container d-flex flex-column align-items-center mt-4 gap-4">
   <app-main></app-main>
-
   <table>
     <thead>
       <tr>
         <th>Name</th>
         <th>Age</th>
         <th>Phone</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of peopleList">
-        <ng-container *ngIf="!showAgeAbove30 || (showAgeAbove30 && +p.age > 30)">
+      <tr *ngFor="let p of data">
           <td>{{ p.name }}</td>
           <td>{{ p.age }}</td>
           <td>{{ p.phone }}</td>
-        </ng-container>
+          <td class="d-flex justify-content-center gap-2">
+            <button class="btn btn-primary" (click)="edit()">Edit</button>
+            <button class="btn btn-danger" (click)="delete()">Delete</button>
+          </td>
       </tr>
     </tbody>
   </table>

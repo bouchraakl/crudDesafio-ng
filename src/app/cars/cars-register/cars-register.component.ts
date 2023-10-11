@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Cars } from '../cars';
 import { DataService } from 'src/app/data.service';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-cars-register',
@@ -8,12 +9,24 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./cars-register.component.scss']
 })
 export class CarsRegisterComponent {
-  newCars: Cars = { name: '', year: 0};
 
-  constructor(private dataService: DataService) {}
 
-  registerCars() {
-    this.dataService.addCar(this.newCars);
-    this.newCars = { name: '', year: 0 }; 
+  @Input() carros: Cars = new Cars();
+  @Output() retorno = new EventEmitter<Cars>();
+
+  carsService = inject(CarsService);
+
+  constructor() { }
+
+  salvar() {
+    this.carsService.save(this.carros).subscribe({
+      next: c => {
+        this.retorno.emit(this.carros);
+      },
+      error: erro => {
+        console.error(erro);
+      }
+    });
   }
+
 }

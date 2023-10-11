@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
-import { Cars } from '../cars';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-cars-list',
   templateUrl: './cars-list.component.html',
   styleUrls: ['./cars-list.component.scss']
 })
-export class CarsListComponent {
-  carsList: Cars[] = [];
+export class CarsListComponent implements OnInit {
+  data: any[] = [];
+  tableHeaders: string[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private carsService: CarsService) { }
 
-  ngOnInit() {
-    this.dataService.carsList$.subscribe(list => {
-      this.carsList = list;
+  ngOnInit(): void {
+    this.carsService.listAll().subscribe((response: any[]) => {
+      this.data = response;
     });
   }
+
+  
+  editar() {}
+  deletar() {}
+
 }

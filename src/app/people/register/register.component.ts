@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Person } from '../person';
 import { DataService } from 'src/app/data.service';
+import { PeopleService } from '../people.service';
 
 @Component({
   selector: 'app-register',
@@ -8,13 +9,21 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  @Input() people: Person = new Person();
+  @Output() retorno = new EventEmitter<Person>();
 
-  newPerson: Person = { name: '', age: 0, phone: '' };
+  pService = inject(PeopleService);
 
-  constructor(private dataService: DataService) {}
+  constructor() { }
 
-  registerPerson() {
-    this.dataService.addPerson(this.newPerson);
-    this.newPerson = { name: '', age: 0, phone: '' }; 
+  salvar() {
+    this.pService.save(this.people).subscribe({
+      next: c => {
+        this.retorno.emit(this.people);
+      },
+      error: erro => {
+        console.error(erro);
+      }
+    });
   }
 }

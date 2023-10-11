@@ -13,6 +13,7 @@ import { CarsListComponent } from './cars/cars-list/cars-list.component';
 import { CarsRegisterComponent } from './cars/cars-register/cars-register.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { BooksRegisterComponent } from './books/books-register/books-register.component';
+import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,18 +2,18 @@
 <app-main></app-main>
 
 <div class="register-form">
-  <form (ngSubmit)="registerPerson()">
+  <form (ngSubmit)="salvar()">
     <div class="form-groupp">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" [(ngModel)]="newPerson.name" required>
+      <input type="text" id="name" name="name" [(ngModel)]="people.name" required>
     </div>
     <div class="form-groupp">
       <label for="age">Age</label>
-      <input type="number" id="age" name="age" [(ngModel)]="newPerson.age" required>
+      <input type="number" id="age" name="age" [(ngModel)]="people.age" required>
     </div>
     <div class="form-groupp">
       <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" [(ngModel)]="newPerson.phone" required>
+      <input type="text" id="phone" name="phone" [(ngModel)]="people.phone" required>
     </div>
     <button type="submit">Register</button>
   </form>

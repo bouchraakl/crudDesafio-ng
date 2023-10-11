@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../person';
 import { DataService } from 'src/app/data.service';
+import { PeopleService } from '../people.service';
 
 @Component({
   selector: 'app-list',
@@ -9,14 +10,23 @@ import { DataService } from 'src/app/data.service';
 })
 export class ListComponent implements OnInit {
 
-  peopleList: Person[] = [];
-  showAgeAbove30: boolean = false;
+  data: any[] = [];
+  tableHeaders: string[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private pService: PeopleService) { }
 
-  ngOnInit() {
-    this.dataService.peopleList$.subscribe(list => {
-      this.peopleList = list;
+  ngOnInit(): void {
+    this.pService.listAll().subscribe((response: any[]) => {
+      this.data = response;
     });
   }
+
+  edit(){
+
+  }
+
+  delete(){
+
+  }
+
 }
