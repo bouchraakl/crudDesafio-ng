@@ -9,12 +9,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let c of data">
+        <tr *ngFor="let c of data;let i = index">
             <td>{{ c.title }}</td>
             <td>{{ c.author }}</td>
             <td class="d-flex justify-content-center gap-2">
-              <button class="btn btn-primary" (click)="edit()">Edit</button>
-              <button class="btn btn-danger" (click)="delete()">Delete</button>
+              <button class="btn btn-primary" [routerLink]="['/books/edit', c.id]">Edit</button>
+              <button class="btn btn-danger" (click)="delete(c.id)">Delete</button>
             </td>
         </tr>
       </tbody>

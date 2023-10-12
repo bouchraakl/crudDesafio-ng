@@ -20,10 +20,10 @@ export class BooksListComponent {
     });
   }
 
-  edit(){
-
+  delete(id: number): void {
+    this.data = this.data.filter(item => item.id !== id);
+    this.bService.delete(id).subscribe();
   }
 
-  delete(){}
 
 }

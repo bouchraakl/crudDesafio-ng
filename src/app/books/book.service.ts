@@ -15,7 +15,19 @@ export class BookService {
     return this.http.get<Book[]>(this.API_URL + '/');
   }
 
+  loadById(id: number): Observable<Book> {
+    return this.http.get<Book>(this.API_URL + '/get/' + id);
+  }
+
   save(book: Book): Observable<Book> {
     return this.http.post<Book>(this.API_URL + '/', book);
+  }
+
+  update(book: Book): Observable<Book> {
+    return this.http.put<Book>(this.API_URL + '/' + book.id, book);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(this.API_URL + '/' + id);
   }
 }

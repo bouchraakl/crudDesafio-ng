@@ -15,8 +15,8 @@
           <td>{{ p.age }}</td>
           <td>{{ p.phone }}</td>
           <td class="d-flex justify-content-center gap-2">
-            <button class="btn btn-primary" (click)="edit()">Edit</button>
-            <button class="btn btn-danger" (click)="delete()">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/people/edit', p.id]">Edit</button>
+            <button class="btn btn-danger" (click)="delete(p.id)">Delete</button>
           </td>
       </tr>
     </tbody>

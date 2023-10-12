@@ -19,8 +19,10 @@ export class CarsListComponent implements OnInit {
     });
   }
 
-  
-  editar() {}
-  deletar() {}
+  delete(id: number) {
+    this.carsService.delete(id).subscribe((response: any) => {
+      this.data = this.data.filter((item: any) => item.id !== id);
+    });
+  }
 
 }

@@ -15,6 +15,9 @@ import { BooksListComponent } from './books/books-list/books-list.component';
 import { BooksRegisterComponent } from './books/books-register/books-register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
+import { CarEditComponent } from './cars/car-edit/car-edit.component';
+import { EditPeopleComponent } from './people/edit-people/edit-people.component';
+import { EditBooksComponent } from './books/edit-books/edit-books.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,9 @@ import { MainComponent } from './main/main.component';
     BooksListComponent,
     BooksRegisterComponent,
     MainComponent,
+    CarEditComponent,
+    EditPeopleComponent,
+    EditBooksComponent,
   ],
   imports: [
     BrowserModule,

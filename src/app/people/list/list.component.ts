@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../person';
-import { DataService } from 'src/app/data.service';
 import { PeopleService } from '../people.service';
 
 @Component({
@@ -25,8 +23,10 @@ export class ListComponent implements OnInit {
 
   }
 
-  delete(){
-
+  delete(id: number) {
+    this.pService.delete(id).subscribe((response: any) => {
+      this.data = this.data.filter((item: any) => item.id !== id);
+    });
   }
 
 }

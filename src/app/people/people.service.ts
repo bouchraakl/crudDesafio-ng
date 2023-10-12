@@ -19,4 +19,16 @@ export class PeopleService {
   save(person: Person): Observable<Person> {
     return this.http.post<Person>(this.API_URL + '/', person);
   }
+
+  update(person: Person): Observable<Person> {
+    return this.http.put<Person>(this.API_URL + '/' + person.id, person);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(this.API_URL + '/' + id);
+  }
+
+  loadById(id: number): Observable<Person> {
+    return this.http.get<Person>(this.API_URL + '/get/' + id);
+  }
 }

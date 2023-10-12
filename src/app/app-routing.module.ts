@@ -7,15 +7,21 @@ import { CarsRegisterComponent } from './cars/cars-register/cars-register.compon
 import { MainComponent } from './main/main.component';
 import { BooksListComponent } from './books/books-list/books-list.component';
 import { BooksRegisterComponent } from './books/books-register/books-register.component';
+import { CarEditComponent } from './cars/car-edit/car-edit.component';
+import { EditPeopleComponent } from './people/edit-people/edit-people.component';
+import { EditBooksComponent } from './books/edit-books/edit-books.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'cars', component: CarsListComponent },
   { path: 'cars/register', component: CarsRegisterComponent },  
+  { path: 'cars/edit/:id', component: CarEditComponent},
   { path: 'people', component: ListComponent },
   { path: 'people/register', component: RegisterComponent },
+  { path: 'people/edit/:id', component: EditPeopleComponent},
   { path: 'books', component: BooksListComponent },
   { path: 'books/register', component: BooksRegisterComponent },
+  { path: 'books/edit/:id', component: EditBooksComponent},
 ];
 
 

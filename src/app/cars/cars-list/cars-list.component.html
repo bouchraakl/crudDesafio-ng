@@ -13,8 +13,8 @@
             <td>{{ c.name }}</td>
             <td>{{ c.year }}</td>
             <td class="d-flex justify-content-center gap-2">
-              <button class="btn btn-primary" (click)="editar()">Edit</button>
-              <button class="btn btn-danger" (click)="deletar()">Delete</button>
+              <button class="btn btn-primary" [routerLink]="['/cars/edit', c.id]">Edit</button>
+              <button class="btn btn-danger" (click)="delete(c.id)">Delete</button>
         </tr>
       </tbody>
     </table>

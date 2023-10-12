@@ -22,5 +22,17 @@ export class CarsService {
     return this.http.post<Cars>(this.API + '/', cars);
   }
 
+  update(cars: Cars): Observable<Cars> {
+    return this.http.put<Cars>(this.API + '/' + cars.id, cars);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(this.API + '/' + id);
+  }
+
+  loadById(id: number): Observable<Cars> {
+    return this.http.get<Cars>(this.API + '/get/' + id);
+  }
+
 
 }
