@@ -1,22 +1,24 @@
 <div class="container d-flex flex-column align-items-center mt-4 gap-4">
-    <app-main></app-main>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Year</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let c of data">
-            <td>{{ c.name }}</td>
-            <td>{{ c.year }}</td>
-            <td class="d-flex justify-content-center gap-2">
-              <button class="btn btn-primary" [routerLink]="['/cars/edit', c.id]">Edit</button>
-              <button class="btn btn-danger" (click)="delete(c.id)">Delete</button>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <app-main></app-main>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of data">
+        <td>{{ c.name }}</td>
+        <td>{{ c.year }}</td>
+        <td class="d-flex justify-content-center gap-2">
+          <button class="btn btn-primary" [routerLink]="['/cars/edit', c.id]">
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="delete(c.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
